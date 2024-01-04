@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+
+    <div id="company-name">
+        <h1>SkyRoutes</h1>
+    </div>
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Login</h2>
+        </div>
+        <div class="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var userType = document.getElementById('userType').value;
+            window.location.href = 'src/pages/client.html';
+            if (userType === 'user1') {
+                window.location.href = 'user1_page.html';
+            } else if (userType === 'user2') {
+                window.location.href = 'user2_page.html';
+            } else {
+                alert('Invalid user type');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
