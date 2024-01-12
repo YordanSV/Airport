@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
 
     <div id="company-name">
+        <img id="company-icon" src="src/img/icono.png" alt="Company Icon">
         <h1>SkyRoutes</h1>
     </div>
     <div class="login-container">
         <div class="login-header">
-            <h2>Login</h2>
+            <h2 style="margin: 15px;">Login</h2>
         </div>
         <div class="login-form">
             <div class="form-group">
@@ -32,8 +34,9 @@
 
     <script>
         function login() {
-            var userType = document.getElementById('userType').value;
-            window.location.href = 'src/pages/client.html';
+            console.log('Paso');
+            // var userType = document.getElementById('userType').value;
+            window.location.href = 'src/pages/client/index.html';
             if (userType === 'user1') {
                 window.location.href = 'user1_page.html';
             } else if (userType === 'user2') {

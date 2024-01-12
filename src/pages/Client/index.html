@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="client.css">
+    <!-- CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Scripts de Bootstrap (jQuery y Popper.js requeridos) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <form id="buscador">
+        <!-- <div class="row"> -->
+        <div class="three columns">
+            <label for="origin">Origin</label>
+            <select class="u-full-width" id="origin">
+                <option value="">Seleccione</option>
+            </select>
+        </div>
+        <div class="three columns">
+            <label for="destination">Destination</label>
+            <select class="u-full-width" id="destination">
+                <option value="">Seleccione</option>
+            </select>
+        </div>
+        <div class="three columns">
+            <label for="departureTime">Departure Time</label>
+            <select class="u-full-width" id="departureTime">
+                <option value="">Seleccione</option>
+            </select>
+        </div>
+        <div class="three columns">
+            <label for="arrivalTime">Arrival Time</label>
+            <select class="u-full-width" id="arrivalTime">
+                <option value="">Seleccione</option>
+            </select>
+        </div>
+        <div class="three columns">
+            <label for="date">Date</label>
+            <select class="u-full-width" id="date">
+                <option value="">Seleccione</option>
+            </select>
+        </div>
+        <!-- </div> -->
+    </form>
+    <section id="flightAvailable">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./img/brasil.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                    content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </section>
+
+
+    <table id="tableFlights"></table>
+
+    <script type="module" src="flightScript.js"></script>
+    <script type="module" src="filterScript.js"></script>
+</body>
+
+</html>
