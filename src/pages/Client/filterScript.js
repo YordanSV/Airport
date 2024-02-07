@@ -18,7 +18,7 @@ const flights = [
 ]
 
 
-const searchFligth = {
+const searchFlight = {
   origin: '',
   destination: '',
   price: '',
@@ -32,7 +32,78 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFlightCards(flights); //Muestra los vuelos al cargar
 })
 
+originInput.addEventListener('change', e => {
+  searchFlight.origin = e.target.value;
+  filterFlights();
+})
+destinationInput.addEventListener('change', e => {
+  searchFlight.destination = e.target.value;
+  filterFlights();
+})
+departureTimeInput.addEventListener('change', e => {
+  searchFlight.departureTime = e.target.value;
+  filterFlights();
+})
+arrivalTimeInput.addEventListener('change', e => {
+  searchFlight.arrivalTime = e.target.value;
+  filterFlights();
+})
+dateInput.addEventListener('change', e => {
+  searchFlight.date = e.target.value;
+  filterFlights();
+})
 
+
+function filterFlights() {
+  const result = flights.filter( filterOrigin ).filter( filterDestination ).filter( filterPrice )
+                  .filter( filterDate ).filter( filterDepartureTime ).filter( filterArrivalTime );
+
+  renderFlightCards(result);
+}
+
+function filterOrigin(flight) {
+  const {origin} = searchFlight;
+  if(origin){
+    return origin === flight.origin;
+  }
+  return flight;
+}
+
+function filterDestination(flight) {
+  const {destination} = searchFlight;
+  if(destination){
+    return destination === flight.destination;
+  }
+  return flight;
+}
+function filterPrice(flight) {
+  const {price} = searchFlight;
+  if(price){
+    return price === flight.price;
+  }
+  return flight;
+}
+function filterDate(flight) {
+  const {date} = searchFlight;
+  if(date){
+    return date === flight.date;
+  }
+  return flight;
+}
+function filterDepartureTime(flight) {
+  const {departureTime} = searchFlight;
+  if(departureTime){
+    return departureTime === flight.departureTime;
+  }
+  return flight;
+}
+function filterArrivalTime(flight) {
+  const {arrivalTime} = searchFlight;
+  if(arrivalTime){
+    return arrivalTime === flight.arrivalTime;
+  }
+  return flight;
+}
 
 function generateFlightCard(flight) {
   return `
@@ -55,6 +126,7 @@ function generateFlightCard(flight) {
 }
 
 function renderFlightCards(flights) {
+  cleanHTML();
   // Obtener el contenedor de filas de tarjetas de vuelo
   const flightCardRow = document.getElementById('flightCardRow');
 
@@ -65,3 +137,9 @@ function renderFlightCards(flights) {
   });
 }
 
+function cleanHTML() {
+  const flightCardRow = document.getElementById('flightCardRow');
+  while (flightCardRow.firstChild) {
+    flightCardRow.removeChild(flightCardRow.firstChild);
+  }
+}

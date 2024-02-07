@@ -8,11 +8,14 @@ form {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 20px;
+    background-color: #007bff;
+    padding: 20px; /* Añade un espacio interno para mejorar la apariencia */
 }
 
 form .columns {
     width: calc(25% - 10px);
     margin-right: 10px;
+    background-color: #007bff;
 }
 
 label {
@@ -26,7 +29,6 @@ select {
     padding: 8px;
     box-sizing: border-box;
 }
-
 h1 {
     margin-bottom: 20px;
 }
@@ -71,7 +73,7 @@ th, td {
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #283747;
     border-color: #0056b3;
 }
 
